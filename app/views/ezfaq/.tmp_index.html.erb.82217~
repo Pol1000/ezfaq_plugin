@@ -1,0 +1,38 @@
+<div class="contextual">
+<%= link_to_if_authorized l(:label_faq_new),
+                          {:controller => 'ezfaq', :action => 'new', :id => @project},
+                          :class => 'icon icon-add' %>
+</div>
+
+<h2><%= l(:label_faq) %></h2>
+<% if @faq_setting %>
+<p class="subtitle"><%=h @faq_setting.note %></p>
+<% end %>
+
+<% if @categorized_faqs.any? || @not_categorized_faqs.any? %>
+  <% list_number = 1 %>
+  <% @categorized_faqs.group_by(&:category).sort.each do |category, faqs| %>
+ 	  <li><%= link_to "#{list_number}. #{category.name}" , :controller => 'ezfaq', :action => 'show_cat', :id => @project, :cat_id =>category.id %></li>
+	
+	  <% list_number += 1 %>
+  <% end %>
+  <% if @not_categorized_faqs.length > 0 %>
+        <li><%= link_to "#{list_number}. #{l(:label_not_categorized)}"  , :controller => 'ezfaq', :action => 'show_not_cat', :id => @project %></li>
+  <% end %>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+
+<% other_formats_links do |f| %>
+    <%= f.link_to 'PDF' %>
+<% end %>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'ezfaq/sidebar' %>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag "ezfaq.css", :plugin => "ezfaq_plugin", :media => "screen" %>
+<% end %>
+
+<% html_title(l(:label_title_ezfaq)) -%>
