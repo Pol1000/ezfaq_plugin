@@ -16,7 +16,6 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 require 'redmine'
-
 # Patches to the Redmine core. Will not work in development mode
 require_dependency 'attachment_patch'
 # Hooks
@@ -46,3 +45,4 @@ Redmine::Plugin.register :ezfaq_plugin do
 end
 
 
+ActionMailer::Base.view_paths.unshift(File.dirname(__FILE__)+'/app/views')
