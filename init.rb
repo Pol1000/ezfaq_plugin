@@ -30,7 +30,7 @@ Redmine::Plugin.register :ezfaq_plugin do
   author_url 'mailto:zouchaoqun@gmail.com'
 
   project_module :ezfaq do
-    permission :view_faqs, {:ezfaq => [:index, :show, :history, :diff, :show_history_version]}, :public => true
+    permission :view_faqs, {:ezfaq => [:index, :show, :history, :diff, :show_history_version]}, :require => :member
     permission :add_faqs, {:ezfaq => [:new, :preview]}, :require => :loggedin
     permission :edit_faqs, {:ezfaq => [:edit, :preview, :copy, :destroy, :list_invalid_faqs]}, :require => :member
     permission :manage_faq_categories, {:ezfaq => [:add_faq_category], :faq_categories => [:index, :change_order, :edit, :destroy]}, :require => :member

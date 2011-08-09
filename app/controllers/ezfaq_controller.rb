@@ -23,6 +23,9 @@ class EzfaqController < ApplicationController
   before_filter :authorize, :except => [:show_not_cat,:show_cat]
   before_filter :find_faq, :only => [:show, :edit, :copy, :destroy, :history, :show_history_version]
   
+  
+  default_search_scope :faqs
+  
   helper :attachments
   include AttachmentsHelper
   helper :messages
