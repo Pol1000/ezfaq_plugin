@@ -224,7 +224,7 @@ private
   def faq_to_pdf
     faq_setting = FaqSetting.find(:first, :conditions => "project_id = #{@project.id}")
 
-    pdf = IFPDF.new(current_language)
+    pdf = ITCPDF.new(current_language)
     pdf.SetTitle("#{l(:label_faq)}-#{@faq.question}")
     pdf.SetAuthor('ezFAQ for Redmine')
     pdf.AliasNbPages
@@ -252,7 +252,7 @@ private
   end
 
   def faqs_to_pdf
-    pdf = IFPDF.new(current_language)
+    pdf = ITCPDF.new(current_language)
     pdf.SetTitle(@faq_setting.pdf_title) if (@faq_setting && @faq_setting.pdf_title)
     pdf.SetAuthor('ezFAQ for Redmine')
     pdf.AliasNbPages
