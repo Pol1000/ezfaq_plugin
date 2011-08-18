@@ -46,3 +46,5 @@ end
 
 
 ActionMailer::Base.view_paths.unshift(File.dirname(__FILE__)+'/app/views')
+
+
