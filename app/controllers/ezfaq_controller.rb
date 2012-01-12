@@ -246,7 +246,7 @@ private
 
     pdf.Line(pdf.GetX, pdf.GetY, 100, pdf.GetY)
     pdf.SetFontStyle('I',8)
-    pdf.RDMCell(90,5, 'Auto generated faq-document by ezFAQ. Powered by ezWORK & Redmine.')
+#    pdf.RDMCell(90,5, 'Auto generated faq-document by ezFAQ. Powered by ezWORK & Redmine.')
 
     pdf.Output
   end
@@ -312,7 +312,7 @@ private
 
     pdf.Line(pdf.GetX, pdf.GetY, 100, pdf.GetY)
     pdf.SetFontStyle('I',8)
-    pdf.RDMCell(60,5, 'Auto generated faq-list by ezFAQ. Powered by ezWORK & Redmine.')
+#    pdf.RDMCell(60,5, 'Auto generated faq-list by ezFAQ. Powered by ezWORK & Redmine.')
 
     pdf.Output
   end

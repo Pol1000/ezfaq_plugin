@@ -16,7 +16,7 @@ en:
   label_info_for_input_id: (Please input id)
   label_manage: Manage
   label_faq_setting: FAQ setting
-  label_updated_time_by: Updated by {{author}} {{age}} ago
+  label_updated_time_by: Updated by %{author} %{age} ago
 
   field_question: Question
   field_answer: Answer
@@ -31,11 +31,11 @@ en:
   field_faq_note: FAQ note(Displayed before the FAQ list)
   field_note: FAQ note
 
-  text_faq_category_destroy_question: Some FAQ ({{value}}) is assigned to this category. What do you want to do ?
+  text_faq_category_destroy_question: Some FAQ (%{value}) is assigned to this category. What do you want to do ?
   text_faq_category_destroy_assignments: Remove category assignments
   text_faq_category_reassign_to: Reassign FAQ to this category
-  text_faq_added: FAQ {{title}} has been created by {{author}}.
-  text_faq_updated: FAQ {{title}} has been updated by {{author}}.
+  text_faq_added: FAQ %{title} has been created by %{author}.
+  text_faq_updated: FAQ %{title} has been updated by %{author}.
   text_faq_pdf_title_not_set: Attention! Please specify PDF title in FAQ Settings first.
 
   permission_view_faqs: View FAQ
