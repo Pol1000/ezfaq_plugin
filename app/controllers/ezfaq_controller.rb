@@ -84,7 +84,12 @@ class EzfaqController < ApplicationController
     @faq_categories = FaqCategory.find(:all, :conditions => "project_id = #{@project.id}", :order => "position")
     @faq = Faq.new(params[:faq])
     @faq.project_id = @project.id
+    category = params[:category]
+    if(category != nil)
+      
+      @faq.category = FaqCategory.find_by_id(category)
 
+    end
     if request.get? || request.xhr?
       @faq.difficulty = 5
       

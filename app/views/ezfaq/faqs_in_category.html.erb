@@ -1,4 +1,10 @@
+<div align="right">
+<%= link_to_if_authorized l(:label_faq_new),
+                          {:controller => 'ezfaq', :action => 'new', :category => @category.id, :id => @project},
+                          :class => 'icon icon-add' %>
+</div>
 <ul>
+	
 	 <% if @category != nil %>
 	 <label><big><b><%=@category.name%></b></big></label><br><br>
 	 <%else%>
